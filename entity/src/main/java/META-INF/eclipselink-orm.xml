@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings version="2.5" xmlns="http://www.eclipse.org/eclipselink/xsds/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.eclipse.org/eclipselink/xsds/persistence/orm http://www.eclipse.org/eclipselink/xsds/eclipselink_orm_2_5.xsd">
+    <named-query name="BootUser.findAll">
+        <query>select b from BootUser b</query>
+    </named-query>
+    <named-query name="TNote.findAll">
+        <query>select t from TNote t</query>
+    </named-query>
+    <named-query name="TNoteType.findAll">
+        <query>select t from TNoteType t</query>
+    </named-query>
+	<entity class="model.BootUser" access="VIRTUAL">
+		<table name="boot_user"/>
+		<attributes>
+			<id name="id" attribute-type="String">
+			</id>
+			<basic name="createdate" attribute-type="java.util.Date">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="loginName" attribute-type="String">
+				<column name="login_name"/>
+			</basic>
+			<basic name="name" attribute-type="String">
+			</basic>
+			<basic name="password" attribute-type="String">
+			</basic>
+		</attributes>
+	</entity>
+	<entity class="model.TNote" access="VIRTUAL">
+		<table name="t_note"/>
+		<attributes>
+			<id name="id" attribute-type="String">
+			</id>
+			<basic name="content" attribute-type="String">
+				<lob/>
+			</basic>
+			<basic name="creatAt" attribute-type="java.util.Date">
+				<temporal>DATE</temporal>
+			</basic>
+			<basic name="createAt" attribute-type="java.util.Date">
+				<column name="create_at"/>
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="mark" attribute-type="byte">
+			</basic>
+			<basic name="status" attribute-type="String">
+			</basic>
+			<basic name="title" attribute-type="String">
+			</basic>
+			<basic name="type" attribute-type="java.math.BigInteger">
+			</basic>
+			<basic name="updateAt" attribute-type="java.util.Date">
+				<temporal>DATE</temporal>
+			</basic>
+			<basic name="uuid" attribute-type="String">
+			</basic>
+		</attributes>
+	</entity>
+	<entity class="model.TNoteType" access="VIRTUAL">
+		<table name="t_note_type"/>
+		<attributes>
+			<id name="id" attribute-type="String">
+			</id>
+			<basic name="crateAt" attribute-type="java.util.Date">
+				<temporal>DATE</temporal>
+			</basic>
+			<basic name="name" attribute-type="String">
+			</basic>
+			<basic name="status" attribute-type="String">
+			</basic>
+			<basic name="updateAt" attribute-type="java.util.Date">
+				<temporal>DATE</temporal>
+			</basic>
+			<basic name="uuid" attribute-type="String">
+			</basic>
+		</attributes>
+	</entity>
+</entity-mappings>
